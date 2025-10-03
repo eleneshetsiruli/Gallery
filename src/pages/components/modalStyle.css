@@ -1,0 +1,75 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #cac8c8;
+  padding: 1rem;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 1rem;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-image {
+  width: 350px;
+  height: 350px;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: crimson;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+.photo-info--icon {
+  width: 1rem;
+}
+
+.photo-info {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-top: 12px;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  font-size: 15px;
+  color: #222;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease;
+}
+
+.photo-info:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.photo-info p {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.photo-info strong {
+  color: #444;
+  margin-right: 6px;
+}
+
+.photo-info p span.icon {
+  font-size: 18px;
+  margin-right: 8px;
+  display: inline-flex;
+}
