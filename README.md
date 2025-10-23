@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+A React-based photo gallery app built with the Unsplash API.
+Browse popular photos, search by keyword, view your search history, and open photos in full view with detailed stats.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📸 Features
+Home Page: Displays the 20 most popular photos
+Search: Text input updates results automatically (no search button)
+Caching: Previously searched keywords are cached to avoid redundant API requests
+History Page: Lists all searched keywords; clicking on one reloads cached results
+Infinite Scroll: Loads more images dynamically on scroll (both pages)
+Modal View: Clicking a photo opens a modal with full-size image, likes, views, and downloads
+🧰 Tech Stack
+React (Hooks, functional components)
+Vite (development environment)
+Vanilla CSS
+Unsplash REST API
+LocalStorage for caching and history
+🗂️ Folder Structure
+/src
+/api
+/components
+/hooks
+/pages
+App.jsx
+main.jsx
+.env
+README.md
 
-Currently, two official plugins are available:
+⚙️ Setup and Run
+Clone the repository
+git clone https://github.com/eleneshetsiruli/Gallery
+cd photo-gallery
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Install dependencies
+npm install
 
-## React Compiler
+Create a .env file and add your Unsplash credentials:
+VITE_UNSPLASH_ACCESS_KEY=your_key
+VITE_UNSPLASH_API_URL=https://api.unsplash.com
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Run the development server:
+npm run dev
 
-## Expanding the ESLint configuration
+Open http://localhost:5173 in your browser.
+🧠 Custom Hooks
+useCache: Stores and retrieves search results from cache
+useDebounce: Reduces API calls while typing
+useInfiniteScroll: Implements infinite scrolling logic
+🚀 Deployment
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Easily deploy on Vercel or Netlify:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+npm run build
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+✨ Author
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Created by Elene, React Developer.
+Feel free to explore or extend the project on GitHub!
